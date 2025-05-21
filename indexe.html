@@ -4,19 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trustful Global - Comprehensive Services Provider</title>
+    <meta name="description" content="Trustful Global offers a wide range of services including web development, travel facilitation, digital training, and more.">
+    <meta name="keywords" content="Trustful Global, web development, travel agency, digital training, graphic design, advertising">
+    <meta name="author" content="Trustful Global Team">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <!--jQuery-->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js" ></script> -->
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Smooth scrolling for navigation links
+            $('a.nav-link').on('click', function(event) {
+                event.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 800);
+            });
+            // Add custom font to the cart title
+            $('h3.card-title').addClass('lilita-one-regular-cart');
+            $('h3.company-name').addClass('lilita-one-regular-cart');
+            
+        });
+    </script>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar">
     <!-- Navigation -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-globe-americas me-2"></i>Trustful Global
+                <i class="fas fa-globe-americas me-2"></i>
+                <span class="lilita-one-regular">Trustful Global</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -91,10 +123,12 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Travel Services">
+                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Tour Services">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Travel Agency Services</h5>
-                            <p>Comprehensive travel services including visa processing and passport facilitation.</p>
+                            <h5>Tour Agency Services</h5>
+                            <p>
+                                Discover the world with our comprehensive tour services: visa processing, passport facilitation, custom tour packages, group excursions, and expert travel advice for unforgettable experiences.
+                            </p>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -147,50 +181,55 @@
                     </div>
                 </div>
                 
-                <!-- Travel Agency -->
+                <!-- Tour Agency -->
                 <div class="col-md-4">
                     <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Travel Agency">
+                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Tour Agency">
                         <div class="card-body">
                             <div class="service-icon">
                                 <i class="fas fa-plane"></i>
                             </div>
-                            <h3 class="card-title">Travel Agency Services</h3>
+                            <h3 class="card-title">Tour Agency Services</h3>
                             <p class="card-text">
-                                Comprehensive travel services including visa processing, passport facilitation, 
-                                and travel arrangements to make your journeys seamless.
+                                Explore the world with confidence! Our tour services cover everything from visa and passport processing to organizing custom tours, group excursions, and adventure trips. We offer:
                             </p>
                             <ul>
-                                <li>Visa application assistance</li>
-                                <li>Passport processing (Cameroonian CNI)</li>
-                                <li>Flight & hotel bookings</li>
-                                <li>Travel insurance</li>
+                                <li>Visa application assistance for multiple destinations</li>
+                                <li>Passport processing (including Cameroonian CNI)</li>
+                                <li>Flight & hotel bookings with exclusive deals</li>
+                                <li>Custom tour packages (honeymoons, family, business, adventure, and cultural tours)</li>
+                                <li>Group tours and excursions for schools, companies, and organizations</li>
+                                <li>Tour insurance and travel safety guidance</li>
+                                <li>24/7 support during your tour</li>
+                                <li>Expert advice on destinations, itineraries, and budgeting</li>
                             </ul>
-                            <a href="#contact" class="btn btn-primary">Request Service</a>
+                            <a href="#contact" class="btn btn-primary">Request Tour Service</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Housing -->
+                <!-- Real Estate Services -->
                 <div class="col-md-4">
                     <div class="card service-card">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Housing">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Real Estate Services">
                         <div class="card-body">
                             <div class="service-icon">
-                                <i class="fas fa-home"></i>
+                                <i class="fas fa-building"></i>
                             </div>
-                            <h3 class="card-title">Housing Solutions</h3>
+                            <h3 class="card-title">Real Estate Services</h3>
                             <p class="card-text">
-                                Find your perfect home with our comprehensive housing services. 
-                                We connect you with quality properties that match your needs and budget.
+                                Unlock your dream property with our comprehensive real estate services. We assist individuals, families, and businesses in buying, selling, and renting properties with ease and confidence. Our experienced team provides:
                             </p>
                             <ul>
-                                <li>Property search & selection</li>
-                                <li>Rental agreements</li>
-                                <li>Real estate consulting</li>
-                                <li>Property management</li>
+                                <li>Property search and personalized recommendations</li>
+                                <li>Assistance with buying, selling, and renting homes, apartments, and commercial spaces</li>
+                                <li>Legal guidance and documentation support</li>
+                                <li>Real estate investment consulting</li>
+                                <li>Property management and maintenance solutions</li>
+                                <li>Market analysis and property valuation</li>
+                                <li>Relocation and settlement services</li>
                             </ul>
-                            <a href="#contact" class="btn btn-primary">Request Service</a>
+                            <a href="#contact" class="btn btn-primary">Request Real Estate Service</a>
                         </div>
                     </div>
                 </div>
@@ -626,7 +665,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3>Trustful Global</h3>
+                    <h3 class="company-name">Trustful Global</h3>
                     <p>Your trusted partner for comprehensive services in web development, travel facilitation, housing, advertising, and more.</p>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
@@ -653,13 +692,13 @@
                     <h4 class="text-white mb-4">Contact Info</h4>
                     <p><i class="fas fa-map-marker-alt me-2"></i> Rond-point Express Biyemassi, Yaoundé</p>
                     <p><i class="fas fa-phone me-2"></i> +237 650 625 447</p>
-                    <p><i class="fas fa-envelope me-2"></i> trustfulCharity2024@gmail.com</p>
+                    <p><i class="fas fa-envelope me-2"></i> trustfulGlobal2024@gmail.com</p>
                 </div>
             </div>
             <hr class="mt-4 mb-4 bg-light">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0">&copy; 2019 - <span id="dateActuel"></span> Trustful Charity. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2019 - <span id="dateActuel"></span> Trustful Global. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="social-icons ">
@@ -695,6 +734,7 @@
     <!-- Bootstrap 5.3 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
+
     <script>
         // Back to top button functionality
         const backToTopButton = document.querySelector('.back-to-top');
