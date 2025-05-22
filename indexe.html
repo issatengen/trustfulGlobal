@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <!--jQuery-->
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.js" ></script> -->
+   
+
+    <!--import du css à partir de mon dépot distant github-->
 
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,12 +36,163 @@
                     scrollTop: $(target).offset().top
                 }, 800);
             });
-            // Add custom font to the cart title
+
+            // Animate service cards on scroll
+            function animateOnScroll() {
+                $('.service-card').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                        $(this).addClass('animate__animated animate__fadeInUp');
+                    }
+                });
+            }
+            $(window).on('scroll', animateOnScroll);
+            animateOnScroll();
+
+            // Animate section titles
+            $('.section-title').addClass('animate__animated animate__fadeInDown');
+
+            // Animate hero section on load
+            $('.hero-section h1, .hero-section p, .hero-section a').addClass('animate__animated animate__fadeIn');
+
+            // Animate testimonials on scroll
+            function animateTestimonials() {
+                $('.testimonial-card').each(function() {
+                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
+                        $(this).addClass('animate__animated animate__zoomIn');
+                    }
+                });
+            }
+            $(window).on('scroll', animateTestimonials);
+            animateTestimonials();
             $('h3.card-title').addClass('lilita-one-regular-cart');
             $('h3.company-name').addClass('lilita-one-regular-cart');
-            
+
+            $('#topup-detail1').hide();
+            $('#topup-detail2').hide();
+            $('#topup-detail3').hide();
+            $('#topup1').css('border', '2px solid white');
+            $('#topup2').css('border', '2px solid white');
+            $('#topup3').css('border', '2px solid white');
+            $('.topup1').on({
+                mouseenter: function() {
+                    $('#topup-detail1').show();
+                    $('.topup2').hide();
+                    $('.topup3').hide();
+                    $(this).removeClass('animate__animated animate__pulse');
+                    $(this).addClass('animate__animated animate__pulse');
+                    $(this).addClass('border-white shadow m-1');
+                    $(this).css('border-top', '0.4rem solid');
+                    $(this).css('height', '12rem');
+                    $(this).css('margin-top', '-8rem');
+                    $(this).css('border-bottom-left-radius', '4rem');
+                    this.style.transition = "transform 0.5s";
+                    this.style.transform = "scale(1.05)";
+                    $('#topup-span1').html('<h class="text-info-emphasis">Welcome to our official website</h6> <br> <a href="#contact" class="btn bg-primary-subtle text-primary-emphasis shadow-sm mt-3 mb-3"><i class="fas fa-info-circle me-2"></i>Learn More</a>');
+                },
+                mouseleave: function() {
+                    $('#topup-detail1').hide();
+                    $('.topup2').show();
+                    $('.topup3').show();
+                    $(this).removeClass('animate__animated animate__pulse');
+                    this.style.transform = "scale(1)";
+                    $(this).css('box-shadow', 'none');
+                    $(this).css('border', '0.2rem solid');
+                    $(this).css('border-bottom-left-radius', '0rem');
+                    $(this).css('height', '8rem');
+                }
+            });
+
+            $('.topup2').on({
+                mouseenter: function() {
+                    $('#topup-detail2').show();
+                    $('.topup1').hide();
+                    $('.topup3').hide();
+                    $(this).removeClass('animate__animated animate__pulse');
+                    $(this).addClass('animate__animated animate__pulse');
+                    $(this).addClass('border-white shadow m-1');
+                    $(this).css('border-top', '0.4rem solid');
+                    $(this).css('height', '12rem');
+                    $(this).css('margin-top', '-8rem');
+                    $(this).css('border-bottom-left-radius', '4rem');
+                    this.style.transition = "transform 0.5s";
+                    this.style.transform = "scale(1.05)";
+                    $('#topup-span2').html('<h class="text-info-emphasis">Welcome to our official website</h6> <br> <a href="#contact" class="btn bg-primary-subtle text-primary-emphasis shadow-sm mt-3 mb-3"><i class="fas fa-info-circle me-2"></i>Learn More</a>');
+                },
+                mouseleave: function() {
+                    $('#topup-detail1').hide();
+                    $('#topup-detail2').hide();
+                    $('.topup1').show();
+                    $('.topup3').show();
+                    $(this).removeClass('animate__animated animate__pulse');
+                    this.style.transform = "scale(1)";
+                    $(this).css('box-shadow', 'none');
+                    $(this).css('border', '0.2rem solid');
+                    $(this).css('border-bottom-left-radius', '0rem');
+                    $(this).css('height', '8rem');
+                }
+            });
+
+            $('.topup3').on({
+                mouseenter: function() {
+                    $('#topup-detail3').show();
+                    $('.topup1').hide();
+                    $('.topup2').hide();
+                    $(this).removeClass('animate__animated animate__pulse');
+                    $(this).addClass('animate__animated animate__pulse');
+                    $(this).addClass('border-white shadow m-1');
+                    $(this).css('border-top', '0.4rem solid');
+                    $(this).css('height', '12rem');
+                    $(this).css('margin-top', '-8rem');
+                    $(this).css('border-bottom-left-radius', '4rem');
+                    this.style.transition = "transform 0.5s";
+                    this.style.transform = "scale(1.05)";
+                    $('#topup-span3').html('<h class="text-info-emphasis">Welcome to our official website</h6> <br> <a href="#contact" class="btn bg-primary-subtle text-primary-emphasis shadow-sm mt-3 mb-3"><i class="fas fa-info-circle me-2"></i>Learn More</a>');
+                },
+                mouseleave: function() {
+                    $('#topup-detail3').hide();
+                    $('#topup-detail1').hide();
+                    $('.topup1').show();
+                    $('.topup2').show();
+                    $(this).removeClass('animate__animated animate__pulse');
+                    this.style.transform = "scale(1)";
+                    $(this).css('box-shadow', 'none');
+                    $(this).css('border', '0.2rem solid');
+                    $(this).css('border-bottom-left-radius', '0rem');
+                    $(this).css('height', '8rem');
+                }
+            });
+
+            $('.topup-container').on({
+                mouseenter: function() {
+                    $(this).removeClass('animate__animated animate__pulse');
+                    $(this).addClass('animate__animated animate__pulse');
+                    $(this).addClass('border-white pb-3 shadow');
+                    $(this).css('border-top', '0.4rem solid');
+                    $(this).css('border-bottom-radius', '4rem');
+                    this.style.transition = "transform 0.5s";
+                    this.style.transform = "scale(1.05)";
+                },
+                mouseleave: function() {
+                    $(this).removeClass('animate__animated animate__pulse');
+                    this.style.transform = "scale(1)";
+                    $(this).css('border-bottom-left-radius', '0rem');
+                }
+            });
+
+            $('#servicesCarousel').on('slide.bs.carousel', function (e) {
+                var $animatingItem = $(e.relatedTarget).find('.carousel-caption');
+                $animatingItem.removeClass('animate__animated animate__fadeInUp');
+                setTimeout(function() {
+                    $animatingItem.addClass('animate__animated animate__fadeInUp');
+                }, 10);
+            });
+
+            // Initial animation for the first slide
+            $('.carousel-item.active .carousel-caption').addClass('animate__animated animate__fadeInUp');
         });
     </script>
+    <!-- Add Animate.css CDN in your <head> if not already present -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar">
     <!-- Navigation -->
@@ -71,21 +223,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#values">
-                            <span class="d-lg-none"><i class="fas fa-gem me-2"></i></span>Core Values
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">
-                            <span class="d-lg-none"><i class="fas fa-users me-2"></i></span>Team
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">
-                            <span class="d-lg-none"><i class="fas fa-comment-dots me-2"></i></span>Testimonials
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#contact">
                             <span class="d-lg-none"><i class="fas fa-envelope me-2"></i></span>Contact
                         </a>
@@ -96,14 +233,98 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Your Trusted Partner for Comprehensive Services</h1>
-            <p class="lead mb-5">From web development to travel facilitation, we provide exceptional services tailored to your needs.</p>
-            <a href="#services" class="btn btn-primary btn-lg me-2">Explore Services</a>
-            <a href="#contact" class="btn btn-accent btn-lg">Request a Service</a>
+    <section id="home" class="hero-section position-relative" style="overflow: hidden; min-height: 60vh;">
+        <!-- Background Video (YouTube Embed) -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;">
+            <iframe 
+                src="https://www.youtube.com/embed/1Q8fG0TtVAY?autoplay=1&mute=1&controls=0&loop=1&playlist=1Q8fG0TtVAY&modestbranding=1&showinfo=0&rel=0"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                style="width:100vw;height:100vh;min-height:60vh;object-fit:cover;pointer-events:none;filter:brightness(0.5); margin-top: -5.5rem;">
+            </iframe>
+        </div>
+        <div class="container-fluid position-relative" style="z-index:1;">
+            <h1 class="display-4 fw-bold mb-4 text-warning">Your Trusted Partner for Comprehensive Services</h1>
+            <h1 class="display-4 fw-bold mb-4 lilita-one-regular text-shadow-border">Trustful Global</h1>
+            <p class="lead mb-5 text-white">From web development to travel facilitation, we provide exceptional services tailored to your needs.</p>
+            <a href="#services" class="btn btn-primary me-2 m-2 box-border box-shadow">
+                <i class="fas fa-search me-2"></i>Explore Services
+            </a>
+            <a href="#contact" class="btn btn-accent btn box-border box-shadow">
+                <i class="fas fa-paper-plane me-2"></i>Request a Service
+            </a>
+            <div class="container-fluid mt-5 pt-5 topup-container" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-position: 100%; background-size: cover; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); ">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://amarello.cloud/wp-content/uploads/2023/11/MLPS-tres.webp" class="topup1" style="height: 8rem; border: 2px solid;" alt="">
+                    </div>
+                    <div class="row col-8" id="topup-detail1">
+                        <div class="shadow-sm bg-light-subtle pt-5">
+                            <h3 class="text-primary-emphasis">Web and mobile App development</h3>
+                            
+                            <p class="text-muted text-justify text-secondary h5 border-primary mt-2" style="border-top: 2px solid; border-bottom: 0.6px solid; padding-bottom: 2rem;">
+                                Web and mobile application development involves creating software applications that run on web browsers or mobile devices. 
+                                These applications can be developed using various technologies and frameworks, depending on the target platform and the desired functionality.
+                            </p>
+                            <span id="topup-span1"></span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img src="https://amarello.cloud/wp-content/uploads/2023/11/MLPS-tres.webp" class="topup2" style="height: 8rem; border: 2px solid;" alt="">
+                    </div>
+                    <div class="row col-11 container ms-4" id="topup-detail2">
+                        <div class="shadow-sm bg-light-subtle pt-5">
+                            <h3 class="text-primary-emphasis">Real estate</h3>
+                            <sup class="text-muted  text-justify text-secondary h5">
+                               <h6>We offer different types of real estate services notably :</h6>
+                               <hr>
+                                <p class="text-left text-secondary h5 border-primary" style="border-top: 2px solid; border-bottom: 1px solid; padding-bottom: 2rem;">
+                                    
+                                    Property search and personalized recommendations
+                                    
+                                    
+                                    Assistance with buying, selling, and renting homes, apartments, and commercial spaces
+                                    
+                                    
+                                    Legal guidance and documentation support
+                                    
+                                    
+                                    Real estate investment consulting
+                                    
+                                    
+                                    Property management and maintenance solutions
+                                    
+                                    
+                                    Market analysis and property valuation
+                                    
+                                    
+                                    Relocation and settlement services
+                                     
+                                </p>
+                                <span id="topup-span2"></span>
+                            </sup>
+                        </div>
+                    </div>
+                    <div class="row col-8" id="topup-detail3">
+                        <div class="shadow-xm bg-light-subtle pt-3">
+                            <h3 class="text-primary-emphasis">Tour services</h3>
+                            <hr>
+                            <p class="text-muted text-justify text-secondary h5 border-primary" style="border-top: 2px solid; border-bottom: 1px solid; padding-bottom: 2rem;">
+                                <em>Trustful Global</em> offers expert tour services, providing seamless travel experiences, guided excursions, and cultural adventures. 
+                                Whether exploring vibrant cityscapes or discovering hidden gems, Trustful Global ensures memorable and hassle-free journeys tailored to your needs.
+                            </p>
+                            <span id="topup-span3"></span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img src="https://amarello.cloud/wp-content/uploads/2023/11/MLPS-tres.webp" class="topup3" style="height: 8rem; border: 2px solid;" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
 
     <!-- Services Carousel -->
     <section class="py-5 bg-light">
@@ -116,14 +337,14 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Web Development">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" style="filter: brightness(0.5);" alt="Web Development">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Web & App Development</h5>
                             <p>Professional website and application development services tailored to your business needs.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Tour Services">
+                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" style="filter: brightness(0.5);" alt="Tour Services">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Tour Agency Services</h5>
                             <p>
@@ -132,7 +353,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Digital Training">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" style="filter: brightness(0.5);" alt="Digital Training">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Digital Skills Training</h5>
                             <p>Comprehensive training programs to equip you with in-demand digital skills.</p>
@@ -464,7 +685,7 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="py-5 bg-light">
+    <!-- <section id="team" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center section-title">Our Team</h2>
             <p class="text-center mb-5">Meet the dedicated professionals who make Trustful Global exceptional</p>
@@ -516,7 +737,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-5">

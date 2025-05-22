@@ -1,4 +1,4 @@
-        :root {
+                :root {
             --primary-color: #3498db;
             --secondary-color: #2c3e50;
             --accent-color: #e74c3c;
@@ -30,9 +30,9 @@
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
-            background-position: center;
+            background-position: center; */
             color: white;
             padding: 150px 0;
             text-align: center;
@@ -252,4 +252,48 @@
         .lilita-one-regular-cart {
             font-family: "Lilita One", sans-serif;
             font-style: normal;
+        }
+        .rowdies-light {
+            font-family: "Rowdies", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .rowdies-regular {
+            font-family: "Rowdies", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .rowdies-bold {
+            font-family: "Rowdies", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .text-border {
+            border: 2px solid white;
+            padding: 5px;
+            display: inline-block;
+        }
+        .text-shadow-border {
+            color: transparent;
+            font-size: 2.5rem;
+            text-shadow: -1px -1px 0 , 1px -1px 0, -1px 1px 0 rgb(214, 142, 7), 1px 4px 0 #f7f7f8;
+            font-weight: 700;
+        }
+        .box-border {
+            border: 2px solid #d3e1f0;
+            box-shadow: 2 6px 6px rgb(231, 223, 223);
+        }
+        .text-info-emphasis {
+            color: #0d6efd;
+            font-weight: 700;
+        }
+        .text-primary-emphasis {
+            color: #0d6efd;
+            font-weight: 700;
+        }
+        .text-secondary-emphasis {
+            color: #6c757d;
+            font-weight: 700;
         }
